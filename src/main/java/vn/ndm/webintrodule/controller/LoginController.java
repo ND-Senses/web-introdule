@@ -24,8 +24,9 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginSubmit(@RequestParam String username, @RequestParam String password, Model model) {
+    public String loginSubmit(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         // Kiểm tra thông tin đăng nhập
+        log.info("#Username {}, password: {}", username, password);
         User user = userRepository.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
             log.info("Login success: {}", user.toString());
