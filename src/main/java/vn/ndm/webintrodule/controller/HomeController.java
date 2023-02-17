@@ -12,4 +12,28 @@ public class HomeController {
         // Thêm các attribute cần thiết cho trang home
         return "home/home";
     }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        // Thêm các attribute cần thiết cho trang home
+        return "home/about";
+    }
+
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        // Thêm các attribute cần thiết cho trang home
+        return "home/contact";
+    }
+
+    @GetMapping("/services")
+    public String services(Model model) {
+        // Thêm các attribute cần thiết cho trang home
+        return "home/services";
+    }
+
+    @GetMapping("/index")
+    public String index(Model model) {
+        // Thêm các attribute cần thiết cho trang home
+        return "home/index";
+    }
 }
