@@ -19,6 +19,7 @@ public class LoginController {
     @GetMapping("/login")
     public String login(Model model) {
         // Thêm các attribute cần thiết cho trang login
+        // trỏ đến file login.html
         return "login/login";
     }
 
@@ -28,6 +29,7 @@ public class LoginController {
         User user = userRepository.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
             log.info("Login success: {}", user.toString());
+            // call sang api /home
             return "redirect:/home";
         }
         // Thêm thông báo lỗi vào mô hình
