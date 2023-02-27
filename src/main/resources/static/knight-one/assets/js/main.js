@@ -222,20 +222,17 @@
             clickable: true
         }
     });
+    /**
+     * Run video youtobe
+     */
+    on('click', '.play-btn', function (e) {
+        e.preventDefault();
+        let videoUrl = this.getAttribute('href');
+        $('.lightbox').html('<iframe src="' + videoUrl + '" frameborder="0" allow="fullscreen"></iframe>');
+    });
 
     /**
      * Initiate Pure Counter
      */
     new PureCounter();
-
 })()
-/**
- * Run video youtobe
- */
-$(document).ready(function () {
-    $('.play-btn').click(function (e) {
-        e.preventDefault();
-        var videoUrl = $(this).data('url');
-        $('.lightbox').html('<iframe src="' + videoUrl + '" frameborder="0" allowfullscreen></iframe>');
-    });
-});
