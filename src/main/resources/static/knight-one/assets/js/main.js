@@ -232,8 +232,8 @@
 /**
  * Run video youtobe
  */
-$(document).ready(function() {
-    $('.play-btn').click(function(e) {
+$(document).ready(function () {
+    $('.play-btn').click(function (e) {
         e.preventDefault();
         var videoUrl = $(this).data('url');
         $('.lightbox').html('<iframe src="' + videoUrl + '" frameborder="0" allowfullscreen></iframe>');

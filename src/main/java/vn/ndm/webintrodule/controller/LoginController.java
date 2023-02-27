@@ -30,7 +30,7 @@ public class LoginController {
         log.info("#Username {}, password: {}", username, password);
         User user = service.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
-            log.info("Login success: {}", user.toString());
+            log.info("Login success: {}", user.getUsername());
             // call sang api /home
             return "redirect:home";
         }
