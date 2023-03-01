@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HeroBizController {
-    @GetMapping("/index1")
+
+    @GetMapping("/index")
     public String index1(Model model) {
         // Thêm các attribute cần thiết cho trang home
         return "hero-biz/index";

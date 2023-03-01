@@ -31,7 +31,7 @@ public class SignInController {
         if (user != null && user.getPassword().equals(password)) {
             log.info("sign-in success: {}", user.getUsername());
             // call sang api /home
-            return "redirect:home";
+            return "redirect:index";
         }
         // Thêm thông báo lỗi vào mô hình
         model.addAttribute("error", "Tên đăng nhập hoặc mật khẩu không đúng");
