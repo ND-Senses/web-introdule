@@ -26,10 +26,9 @@ public class SignInController {
     @PostMapping(value = {"/", "/signin"})
     public String signInSubmit(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
         // Kiểm tra thông tin đăng nhập
-        log.info("#Username {}, password: {}", username, password);
         User user = service.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
-            log.info("sign-in success: {}", user.getUsername());
+            log.info("Sign-in success: {}", user.getUsername());
             // call sang api /home
             return "redirect:/hero-biz/index";
         }
