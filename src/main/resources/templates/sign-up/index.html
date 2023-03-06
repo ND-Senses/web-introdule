@@ -103,13 +103,19 @@
                         <!-- Nếu quá trình đăng ký thành công -->
                         <div th:if="${success}">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>Success!</strong> You have successfully registered. Please login to continue.
+                                <strong>Success!</strong>
+                                <div th:text="${success}"></div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                             </div>
                         </div>
                         <!-- Nếu quá trình đăng ký thất bại -->
                         <div th:if="${error}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Error!</strong> There was an error while registering. Please try again.
+                                <strong>Error!</strong>
+                                <div th:text="${error}"></div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                             </div>
                         </div>
                     </div>

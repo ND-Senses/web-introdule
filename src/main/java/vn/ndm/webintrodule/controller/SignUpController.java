@@ -13,13 +13,14 @@ import vn.ndm.webintrodule.service.UserService;
 @Slf4j
 @Controller
 public class SignUpController {
+    private static final String SIGN_UP = "sign-up/";
     @Autowired
     UserService service;
 
     @GetMapping("/signup")
     public String showSignupForm(Model model) {
         model.addAttribute("user", new User());
-        return "sign-up/index";
+        return SIGN_UP + "index";
     }
 
 
@@ -30,15 +31,15 @@ public class SignUpController {
         User u = service.findByUsername(user.getUsername());
         if (u != null) {
             model.addAttribute("error", "Username already exists!");
-            return "sign-up/index";
+            return SIGN_UP + "index";
         }
-        if (user.getUsername() == null && user.getPassword() == null) {
+        if (user.getUsername().equals("") || user.getPassword().equals("")) {
             model.addAttribute("error", "Username and password not found!");
-            return "sign-up/index";
+            return SIGN_UP + "index";
         }
         model.addAttribute("success", "Sign up Success!");
         // Save the user to the database
         service.saveUser(user);
-        return "sign-up/index";
+        return SIGN_UP + "index";
     }
 }
