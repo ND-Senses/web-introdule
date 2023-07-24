@@ -13,8 +13,12 @@ import vn.ndm.webintrodule.service.UserService;
 @Slf4j
 @Controller
 public class SignInController {
+    final UserService service;
+
     @Autowired
-    UserService service;
+    public SignInController(UserService service) {
+        this.service = service;
+    }
 
     @GetMapping("/signin")
     public String signInIndex(Model model) {
