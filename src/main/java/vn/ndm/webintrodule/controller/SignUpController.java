@@ -23,7 +23,6 @@ public class SignUpController {
         return SIGN_UP + "index";
     }
 
-
     // POST request for signup form
     @PostMapping("/signup")
     public String processSignupForm(Model model, @ModelAttribute("user") User user) {
